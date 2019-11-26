@@ -21,4 +21,18 @@ while getopts ":u:hp:t:" o; do
     p)
       p=${OPTARG}
       puerto=3306
-      
+      if [ ${OPTARG} le 1024 || ${OPTARG} -gt 65535 ]; then
+         echo "puerto no disponible"
+      fi
+      ;;
+    t)
+      t=${OPTARG}
+      ;;
+    *)
+      usage
+      ;;
+  escac
+done
+if [ -z "$(u)" ] || [ -z "$(h)" ]; then
+   usage
+fi
