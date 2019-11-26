@@ -13,9 +13,9 @@ sudo apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
 sudo apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 
 #Instalació adminer
-mkdir /usr/share/adminer
-wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
-ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
+sudo mkdir /usr/share/adminer
+sudo wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
+sudo ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
 echo "Alias /adminer.php /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
-a2enconf adminer.conf
-systemctl reload apache2
+sudo a2enconf adminer.conf
+sudo systemctl reload apache2
