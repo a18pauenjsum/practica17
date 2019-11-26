@@ -3,11 +3,14 @@ apt-get update
 
 # Instalació apache
 apt-get install -y apache2
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password rootpass'
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password rootpass'
 cp /vagrant/index.php /var/www/html
-apt-get install -y php libapache2-mod-php php-mysql
+
 
 # Instalació mysql
-apt-get install -y mysql-server
+sudo apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
+sudo apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 
 #Instalació adminer
 mkdir /usr/share/adminer
