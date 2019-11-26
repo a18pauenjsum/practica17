@@ -10,7 +10,7 @@ la instal·lació de apache2
 Instal·lem mysql-server
 creem un una ruta per adminer
 agafem repositoris de Adminer, en concret el php.
-Fem un enllaç fort entre el lastest.php i el adminer.php
+Fem un enllaç fort entre el lastest.php  --> adminer.php(Round Rect) 
 Després, farem:
 ```sh
 $ echo "Alias /adminer.php /usr/share/adminer/adminer.php"
@@ -18,8 +18,4 @@ $ echo "Alias /adminer.php /usr/share/adminer/adminer.php"
 i ho guardarem en un fitxer de configuracio del adminer.
 Configurem el apache2 amb "a2enconf adminer.conf" que modifica certa configuració del fitxer.
 Recarregum la configuració d'apache.
-```sh
-$ Alias /adminer.php /usr/share/adminer/adminer.php
-$ npm install -d
-$ node app
-```
+
